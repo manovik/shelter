@@ -59,3 +59,84 @@
     color: #B2B2B2;
   }
 }
+
+@media (max-width: 1100px) {
+  .donate {
+    &__wrapper {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    &__img {
+      transform: translateY(0);
+      margin-right: 0;
+    }
+    &__box {
+      margin-bottom: 58px;
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .donate {
+    padding-bottom: 101px;
+  }
+}
+
+@media (max-width: 767px) {
+  .donate {
+    &__img {
+      max-width: 70vw;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .donate {
+    padding-top: 39px;
+    padding-bottom: 29px;
+    &__title {
+      font-size: 25px;
+      margin-bottom: 35px;
+      margin-bottom: 15px;
+    }
+    &__box {
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+
+@media (max-width: 450px) {
+  .container {
+    padding: 0 10px;
+  }
+  .donate{
+    padding-right: 0;
+    padding-top: 42px;
+    padding-bottom: 42px;
+    &__title {
+      margin-bottom: 24px;
+      padding: 0 40px;
+    }
+    &__box {
+      margin-bottom: 41px;
+    }
+    &__text {
+      font-family: $arial;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+    }
+    &__card-number {
+      font-size: 15px;
+      padding-top: 2px;
+    }
+    &__small-text {
+      text-align: justify;
+      padding: 0 10px;
+    }
+    &__img {
+      max-width: 81vw;
+    }
+  }
+}
