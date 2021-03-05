@@ -1,0 +1,144 @@
+@import "../../_variables";
+@import "../../_mixins";
+
+.footer {
+  padding-top: 58px;
+  padding-bottom: 56px;
+  background: url(../1-header/noise_transparent.png),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
+    #211f20;
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    max-width: 302px;
+    height: 236px;
+  }
+  &__title {
+    @include title;
+    color: #fff;
+    margin-bottom: 41px;
+  }
+  &__contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 41px;
+  }
+  &__contact-img {
+    margin-right: 20px;
+  }
+  &__contact-link {
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+    color: $acc-col;
+  }
+  &__visit {
+    transform: translateX(-12px);
+    .footer__title {
+      margin-bottom: 32px;
+    }
+    .footer__contact {
+      margin-bottom: 32px;
+    }
+  }
+  &__img {
+    max-width: 302px;
+    max-height: 315px;
+    transform: translateY(-21px);
+  }
+}
+
+@media (max-width: 1270px) {
+  .footer {
+    &__wrapper {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__item {
+      margin-right: 18px;
+      margin-left: 30px;
+    }
+    &__contact {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer {
+    padding-top: 32px;
+    padding-bottom: 0;
+    &__item {
+      &--dog {
+        height: auto;
+        margin-top: 57px;
+        transform: translateX(-6px);
+      }
+    }
+    &__img {
+      transform: none;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &__wrapper {
+      padding: 0;
+    }
+    &__item {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      height: auto;
+      &--dog {
+        transform: translateX(0);
+      }
+    }
+    &__title {
+      text-align: center;
+    }
+    &__visit {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 0 10px;
+  }
+  .footer {
+    padding-right: 0;
+    &__title {
+      padding: 0 20px;
+      font-size: 24px;
+      letter-spacing: 0.08em;
+    }
+    &__item {
+      align-items: center;
+    }
+    &__img {
+      max-width: 260px;
+    }
+    &__visit {
+      align-items: start;
+      .footer__title {
+        margin-bottom: 39px;
+      }
+      .footer__contact {
+        margin-bottom: 39px;
+      }
+    }
+    &__item--dog {
+      margin-top: -1px;
+    }
+  }
+}
