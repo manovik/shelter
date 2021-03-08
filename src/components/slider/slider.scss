@@ -1,0 +1,66 @@
+@import "../../_variables";
+
+.slider {
+  padding-bottom: 80px;
+  &__arrow-inner {
+    position: relative;
+    height: 52px;
+    width: 52px;
+    border: 2px solid $acc-col !important;
+    border-radius: 50%;
+    transition: all 0.15s linear;
+    background-color: transparent !important;
+    transform: translateX(150%);
+    &--prev {
+      transform: translateX(-150%) rotate(180deg);
+    }
+    &:hover {
+      border: 2px solid $hov-col !important;
+      background-color: $hov-col !important;
+    }
+    &::after {
+      content: url(./arrow.png);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.1);
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    background-color: #fafafa;
+    border-radius: 9px;
+    transition: all 0.15s linear;
+    margin: 0 auto;
+    &:hover {
+      cursor: pointer;
+      background-color: #fff;
+      box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    }
+  }
+  &__img-box {
+    width: 270px;
+    height: 270px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  &__img {
+    height: 270px;
+    transform: translateX(-1px);
+  }
+  &__name {
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin-bottom: 30px;
+  }
+}
