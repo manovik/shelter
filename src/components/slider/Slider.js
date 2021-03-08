@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import GetPets from "../../services/getPets";
+import PetsService from "../../services/getPets";
 import Slide from "./Slide";
 import Carousel from "nuka-carousel";
 
@@ -28,7 +28,7 @@ class Slider extends Component {
   }
 
   getPets() {
-    const pets = new GetPets().getAllPets();
+    const pets = new PetsService().getAllPets();
     pets.then((data) => {
       const petsArray = data.map((item) => {
         const { id, img, type, breed, name } = item;

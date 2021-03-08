@@ -1,5 +1,7 @@
-class GetPets {
-  _url = "http://localhost:3300/pets";
+class PetsService {
+  _url = "http://localhost:3300";
+  _pets = "/pets";
+  _help = "/help";
 
   async getResource(url) {
     const res = await fetch(url);
@@ -12,37 +14,24 @@ class GetPets {
   }
 
   async getAllPets() {
-    return await this.getResource(this._url)
-     .then(data => {
-      return data;
-    });
+    return await this.getResource(`${this._url}${this._pets}`);
   }
 
-  getPet(id) {
-    const pets = this.getResource(this._url);
-
-    pets.forEach((el, i) => {
-      if (el.id === id) {
-        return el[i];
-      } else {
-        console.log("Pet was not found");
-      }
-    });
+  async getAllHelp() {
+    return await this.getResource(`${this._url}${this._help}`);
   }
 
-  _transformData = (item) => {
-    return {
-      name: item.name,
-      img: item.img,
-      type: item.type,
-      breed: item.breed,
-      description: item.description,
-      age: item.age,
-      inoculations: item.inoculations,
-      diseases: item.diseases,
-      parasites: item.parasites,
-    };
-  };
+  // getItem(id) {
+  //   const items = this.getResource(this._url);
+
+  //   pets.forEach((el, i) => {
+  //     if (el.id === id) {
+  //       return el[i];
+  //     } else {
+  //       console.log("Pet was not found");
+  //     }
+  //   });
+  // }
 }
 
-export default GetPets;
+export default PetsService;

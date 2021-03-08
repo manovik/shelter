@@ -96,5 +96,52 @@
       "diseases": ["deafness", "blindness"],
       "parasites": ["lice", "fleas"]
     }
+  ],
+  "help": [
+    {
+      "id": "1",
+      "name": "Pet food",
+      "img": "./images/help-icons/pet-food.png"
+    },
+    {
+      "id": "2",
+      "name": "Transportation",
+      "img": "./images/help-icons/transportation.png"
+    },
+    {
+      "id": "3",
+      "name": "Toys",
+      "img": "./images/help-icons/toys.png"
+    },
+    {
+      "id": "4",
+      "name": "Bowls and cups",
+      "img": "./images/help-icons/bowls-and-cups.png"
+    },
+    {
+      "id": "5",
+      "name": "Shampoos",
+      "img": "./images/help-icons/shampoos.png"
+    },
+    {
+      "id": "6",
+      "name": "Vitamins",
+      "img": "./images/help-icons/vitamins.png"
+    },
+    {
+      "id": "7",
+      "name": "Medicines",
+      "img": "./images/help-icons/medicines.png"
+    },
+    {
+      "id": "8",
+      "name": "Collars / leashes",
+      "img": "./images/help-icons/collars-or-leashes.png"
+    },
+    {
+      "id": "9",
+      "name": "Sleeping areas",
+      "img": "./images/help-icons/sleeping-area.png"
+    }
   ]
 }
