@@ -2,10 +2,11 @@ import React from "react";
 import './btn.scss'
 
 const ContentButton = (props) => {
+
   if (props.isLink) {
     const className = props.className + " btn";
     return (
-      <a className={className} href={props.href}>
+      <a onClick={(e) => e.preventDefault()} className={className} href={props.href}>
         {props.title}
       </a>
     );
@@ -28,7 +29,8 @@ const ContentButton = (props) => {
     }
 
     return (
-      <button className={className}>
+      
+      <button onClick={props.onClick} className={className} disabled={props.disabled} to={props.to}>
         {props.title}
       </button>
     );

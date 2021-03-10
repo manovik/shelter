@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const HeaderLink = (props) => {
 
@@ -8,9 +8,9 @@ const HeaderLink = (props) => {
   const mainPage = "";
   return (
     <li className="header__nav-item">
-      <Link to={props.to}>
+      <NavLink exact={props.exact} to={props.to}>
         <div className={`header__nav-link ${mainPage}`}>{props.title}</div>
-      </Link>
+      </NavLink>
     </li>
   );
 };

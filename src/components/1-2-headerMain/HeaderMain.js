@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ContentTitle from "../contentTitle";
 import ContentButton from "../contentButton";
 import ContentText from "../contentText";
+import { Link } from "react-router-dom";
+
 
 const text =
   "We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!";
@@ -12,8 +14,6 @@ class HeaderMain extends Component {
     this.state = {};
   }
   render() {
-
-
     return (
       <section className="header__main">
         <div className="header__main-box">
@@ -23,7 +23,13 @@ class HeaderMain extends Component {
             title={"Not only people need a house"}
           />
           <ContentText className={"header__main-text"} text={text} />
-          <ContentButton className={"header__main-link"} title={"Make a friend"} href={"../pets/pets.html"} />
+          <Link to={"/pets"}>
+            <ContentButton
+              className={"header__main-link"}
+              title={"Make a friend"}
+              isLink={false}
+            />
+            </Link>
         </div>
         <img
           className="header__img"
