@@ -1,4 +1,5 @@
 import React from "react";
+import './btn.scss'
 
 const ContentButton = (props) => {
   if (props.isLink) {

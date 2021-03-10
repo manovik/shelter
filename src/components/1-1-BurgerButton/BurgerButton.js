@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './burger.scss'
 
 class BurgerButton extends Component {
   constructor(props) {

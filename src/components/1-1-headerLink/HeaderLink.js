@@ -1,12 +1,18 @@
+import React from 'react';
+import { Link } from "react-router-dom";
+
 const HeaderLink = (props) => {
-  const mainPage = props.current ? "header__nav-link--active" : "";
+
+
+  // const mainPage = active ? "header__nav-link--active" : "";
+  const mainPage = "";
   return (
     <li className="header__nav-item">
-      <a className={`header__nav-link ${mainPage}`} href={props.href}>
-        {props.title}
-      </a>
+      <Link to={props.to}>
+        <div className={`header__nav-link ${mainPage}`}>{props.title}</div>
+      </Link>
     </li>
-  )
-}
+  );
+};
 
 export default HeaderLink;

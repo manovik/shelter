@@ -7,10 +7,10 @@ class HeaderNav extends Component {
     return (
       <nav className="header__nav-box">
         <ul className="header__nav">
-          <HeaderLink current={true} href={'google.com'} title={'About the shelter'}/>
-          <HeaderLink current={false} href={'google.com'} title={'Our pets'}/>
-          <HeaderLink current={false} href={'google.com'} title={'Help the shelter'}/>
-          <HeaderLink current={false} href={'google.com'} title={'Contacts'}/>
+          <HeaderLink to={'/'} title={'About the shelter'}/>
+          <HeaderLink to={'/pets'} title={'Our pets'}/>
+          <HeaderLink to={'/help'} title={'Help the shelter'}/>
+          <HeaderLink to={'/contacts'} title={'Contacts'}/>
         </ul>
       </nav>
     );

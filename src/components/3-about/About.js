@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ContentTitle from "../contentTitle";
+import ContentImage from "../contentImage";
 import ContentText from "../contentText";
 import "./about.scss";
 
@@ -17,7 +18,7 @@ class About extends Component {
       <section className="section about">
         <div className="container">
           <div className="about__wrapper">
-            <img
+            <ContentImage
               className="about__img"
               src="./images/content/about-pets.png"
               alt="Pic of dog and cat beside"

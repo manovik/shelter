@@ -3,14 +3,16 @@ import ContentTitle from "../contentTitle";
 import ContentButton from "../contentButton";
 import ContentText from "../contentText";
 
+const text =
+  "We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!";
+
 class HeaderMain extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   render() {
-    const text =
-      "We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!";
+
 
     return (
       <section className="header__main">
