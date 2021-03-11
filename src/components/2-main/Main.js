@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
-import About from '../3-about';
-import Pets from '../4-pets';
+import React, { Component } from "react";
+import About from "../3-about";
+import Pets from "../4-pets";
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-  render() { 
+  render() {
     return (
       <main className="main">
         <About />
@@ -16,5 +12,5 @@ class Main extends Component {
     );
   }
 }
- 
+
 export default Main;
