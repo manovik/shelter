@@ -10,9 +10,9 @@
     border-radius: 50%;
     transition: all 0.15s linear;
     background-color: transparent !important;
-    transform: translateX(150%);
+    transform: translateX(1vw);
     &--prev {
-      transform: translateX(-150%) rotate(180deg);
+      transform: translateX(-1vw) rotate(180deg);
     }
     &:hover {
       border: 2px solid $hov-col !important;
@@ -65,5 +65,13 @@
     letter-spacing: 0.06em;
     color: #545454;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .slider {
+    &__arrow-inner {
+      display: none;
+    }
   }
 }

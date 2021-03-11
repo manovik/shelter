@@ -30,7 +30,7 @@ class ContactsPage extends Component {
                 width="600"
                 height="450"
                 style={{border:0}}
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
               title={"Cozy House"}
               ></iframe>
@@ -48,8 +48,8 @@ class ContactsPage extends Component {
                 className={"contacts__title"}
                 title={"Some information"}
               />
-              {text.map((item) => {
-                return <ContentText className={"contacts__text"} text={item} />;
+              {text.map((item, i) => {
+                return <ContentText key={i} className={"contacts__text"} text={item} />;
               })}
             </div>
           </div>

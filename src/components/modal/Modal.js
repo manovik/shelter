@@ -15,8 +15,8 @@ const Modal = (props) => {
   } = props;
 
   return (
-    <div className="modal">
-      <div className="modal__wrapper">
+    <div onClick={closeModal} className="modal">
+      <div onClick={(e) => e.stopPropagation()} className="modal__wrapper">
         <button onClick={closeModal} className="modal__close" id="close-modal">
           <svg width="12" height="12" fill="none">
             <path

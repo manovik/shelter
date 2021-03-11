@@ -51,7 +51,6 @@ class PetsPage extends Component {
   };
 
   closeModal = () => {
-    console.log('aaaa');
     this.setState({
       modalIsVisible: false,
       modal: [],

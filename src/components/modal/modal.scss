@@ -17,7 +17,7 @@
     max-height: 500px;
     display: flex;
     background-color: #fff;
-    border-radius: 9px;     
+    border-radius: 9px;
   }
   &__close {
     position: absolute;
@@ -28,7 +28,7 @@
     border: 2px solid $acc-col;
     border-radius: 50%;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     &:hover {
       border-color: $hov-col;
       background-color: $hov-col;
@@ -37,14 +37,14 @@
   &__img-box {
     overflow: hidden;
     width: 500px;
-    flex-shrink: 0;    
+    flex-shrink: 0;
     border-radius: 9px 0 0 9px;
   }
   &__img {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
     &:hover {
       transform: scale(1.1);
       transition: all 3s linear;
@@ -54,7 +54,6 @@
     color: #000;
     letter-spacing: 0.06em;
     padding: 50px 20px 50px 30px;
-
   }
   &__name {
     font-size: 35px;
@@ -79,7 +78,7 @@
     font-size: 15px;
     line-height: 1.1;
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 50%;
@@ -92,5 +91,59 @@
   }
   &__item-caption {
     font-weight: 700;
+  }
+}
+
+@media (max-width: 970px) {
+  .modal {
+    &__wrapper {
+      max-width: 630px;
+      min-height: 350px;
+    }
+    &__img-box {
+      max-width: 350px;
+    }
+    &__text {
+      font-size: 13px;
+    }
+    &__caption-box {
+      padding: 10px;
+    }
+    &__type,
+    &__text {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    &__img-box {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .modal {
+    &__wrapper {
+      margin: 0 20px;
+    }
+    &__close {
+      right: 0;
+      top: 0;
+      height: 45px;
+      width: 45px;
+      border-radius: 0;
+      border-top-right-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .modal {
+    &__wrapper {
+      margin: 0 5px;
+    }
   }
 }
