@@ -1,15 +1,85 @@
-@import '../../variables';
+@import "../../variables";
 
 .cards {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-bottom: 45px;
-
   &__items-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
+  }
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__box {
+    font-size: 1.4rem;
+    color: #000;
+  }
+  &__top-text {
+    padding-right: 10px;
+  }
+  &__btn {
+    color: #8f3c00;
+    cursor: pointer;
+    &:not(.cards__btn--active):hover {
+      animation: jump 1s infinite;
+    }
+    & + & {
+      margin-left: 15px;
+    }
+  }
+  &__btn--active {
+    color: #000;
+    cursor: default;
+  }
+  &__select-box {
+    position: relative;
+    display: inline-block;
+  }
+  &__select {
+    border: 1px solid #dedede;
+    z-index: 1;
+    background-color: transparent;
+    border-radius: 3px;
+    width: 50px;
+    height: 33px;
+    padding-left: 2px;
+  }
+}
+
+@keyframes jump {
+  from {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  85% {
+    transform: translateY(-2px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  95% {
+    transform: translateY(-1px);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -34,6 +104,10 @@
     &__items-wrapper {
       grid-template-columns: 1fr;
     }
+    &__top {
+      flex-direction: column;
+      row-gap: 15px;
+    }
   }
 }
 
@@ -49,7 +123,7 @@
     margin: 0 10px;
     border: 2px solid #cdcdcd;
     border-radius: 50%;
-    transition: all .15s linear;
+    transition: all 0.15s linear;
     font-size: 0;
     border: 2px solid $acc-col;
     path {
@@ -89,7 +163,7 @@
     text-align: center;
     background-color: transparent;
     color: #292929;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
     &:hover {
       cursor: pointer;
       background-color: $hov-col;

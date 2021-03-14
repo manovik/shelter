@@ -49,7 +49,7 @@ class Help extends Component {
       <section className="section help" id="help">
         <div className="container">
           <div className="help__wrapper">
-            <h3 className="help__title">How you can help our shelter</h3>
+            <h3 className="help__title">You can help our shelter with:</h3>
             <ul className="help__list">
               {
                 this.state.helpItems

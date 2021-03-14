@@ -61,7 +61,6 @@ class Slider extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.sliderRef);
     if (this.sliderRef.current.state.frameWidth < 910) {
       if (this.sliderRef.current.state.frameWidth < 600) {
         if (this.state.slidesToShow !== 1) {

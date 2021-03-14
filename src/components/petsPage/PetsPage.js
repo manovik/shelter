@@ -5,6 +5,7 @@ import PetsService from "../../services/getPets";
 import Modal from "../modal";
 import { Slide } from "../slider";
 import "./pets.scss";
+import SelectionBar from "../selectionBar/SelectionBar";
 
 class PetsPage extends Component {
   constructor(props) {
@@ -18,19 +19,18 @@ class PetsPage extends Component {
       modalIsVisible: false,
       modal: [],
     };
-    this.handleClick = this.handleClick.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this._initialNumberCards = 8;
   }
 
   componentDidMount() {
     this.getPets();
   }
 
-  handleClick() {
+  handleClick = () => {
     const { numberOfCards, step } = this.state;
     this.setState({ numberOfCards: numberOfCards + step });
     this.checkButton();
-  }
+  };
 
   checkButton() {
     const { cards, numberOfCards, step } = this.state;
@@ -40,9 +40,7 @@ class PetsPage extends Component {
   }
 
   showModal = (args) => {
-    const modal = (
-      <Modal {...args} closeModal={this.closeModal} />
-    );
+    const modal = <Modal {...args} closeModal={this.closeModal} />;
 
     this.setState({
       modalIsVisible: true,
@@ -57,29 +55,68 @@ class PetsPage extends Component {
     });
   };
 
-  getPets() {
+  getPets = () => {
     const pets = new PetsService().getAllPets();
     pets.then((data) => {
       const petsArray = data.map((item) => {
-        return (
-          <Slide {...item}
-            key={item.id}
-            showModal={this.showModal}
-          />
-        );
+        return item;
       });
+
       this.setState({ cards: petsArray });
     });
+  };
+
+  chooseHandler = (attr) => {
+    const pets = new PetsService().getAllPets();
+    if (attr !== "all") {
+      pets.then((data) => {
+        const petsArray = data.filter((item) => {
+          return item.type.toLowerCase() === attr
+        });
+        this.setState({ 
+          cards: petsArray,
+          numberOfCards: this._initialNumberCards,
+          isDisabled: false
+        });
+      });
+    } else {
+      pets.then((data) => {
+        this.setState({ 
+          cards: data,
+          numberOfCards: this._initialNumberCards,
+          isDisabled: false
+        });
+      });
+    }
+  };
+
+  selectionHandler = (i) => {
+    if(i !== 'all') {
+      this.setState({ 
+        numberOfCards: +i,
+        isDisabled: false
+      });      
+    } else {
+      this.setState({ 
+        numberOfCards: this.state.cards.length,
+        isDisabled: true
+      });      
+
+    }
   }
 
   render() {
-    const { cards, numberOfCards } = this.state;
+    const { cards, numberOfCards, isDisabled, modalIsVisible, modal } = this.state;
     const arr = [];
-
+    
+    const cardArr = cards.map((item) => {
+      return <Slide {...item} key={item.id} showModal={this.showModal} />;
+    });
+    
     for (let i = 0; i < numberOfCards; i++) {
-      arr.push(cards[i]);
+      arr.push(cardArr[i]);
     }
-
+    
     return (
       <main className="main">
         <section className="section pets">
@@ -91,19 +128,26 @@ class PetsPage extends Component {
                 title={"Our friends who are looking for a house"}
               />
               <div className="pets__cards cards">
+              <div className="cards__wrapper">
+                <SelectionBar
+                  onClick={this.chooseHandler}
+                  cardsCount={cards.length}
+                  onSelect={this.selectionHandler}
+                />
                 <div className="cards__items-wrapper">{arr}</div>
+              </div>
               </div>
               <ContentButton
                 className="pets__btn"
                 onClick={this.handleClick}
                 title={"Show more"}
                 isLink={false}
-                disabled={this.state.isDisabled}
+                disabled={isDisabled}
               />
             </div>
           </div>
         </section>
-        {this.state.modalIsVisible ? this.state.modal : null}
+        {modalIsVisible ? modal : null}
       </main>
     );
   }

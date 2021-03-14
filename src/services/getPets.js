@@ -1,7 +1,10 @@
 class PetsService {
-  _url = "http://localhost:3300";
-  _pets = "/pets";
-  _help = "/help";
+  // _url = "http://localhost:3300";
+  // _pets = "/pets";
+  // _help = "/help";
+
+
+  ur = './pets.json';
 
   async getResource(url) {
     const res = await fetch(url);
@@ -13,25 +16,38 @@ class PetsService {
     return await res.json();
   }
 
-  async getAllPets() {
-    return await this.getResource(`${this._url}${this._pets}`);
+  getAllPets() {
+    return this.getResource(`${this.ur}`).then(data => this.getRandomPets(data.pets));
   }
+
+  // getAllPets() {
+  //   return this.getResource(`${this._url}${this._pets}`).then(data => this.getRandomPets(data));
+  // }
 
   async getAllHelp() {
-    return await this.getResource(`${this._url}${this._help}`);
+    return await this.getResource(`${this.ur}`).then(h => h.help);
   }
-
-  // getItem(id) {
-  //   const items = this.getResource(this._url);
-
-  //   pets.forEach((el, i) => {
-  //     if (el.id === id) {
-  //       return el[i];
-  //     } else {
-  //       console.log("Pet was not found");
-  //     }
-  //   });
+  // async getAllHelp() {
+  //   return await this.getResource(`${this._url}${this._help}`);
   // }
+
+  getRandomPets(arr) {
+    const randArr = [];
+
+    function rand() {
+      return Math.floor(Math.random() * arr.length);
+    };
+    
+    for (let i = 0; i < arr.length; i++) {
+      const pet = arr[rand()];    
+      if(!randArr.includes(pet)) {
+        randArr.push(pet);
+      } else {
+        i -= 1;
+      }
+    }
+    return randArr;
+  }
 }
 
 export default PetsService;
