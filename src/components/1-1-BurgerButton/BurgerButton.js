@@ -9,12 +9,11 @@ class BurgerButton extends Component {
      }
   }
 
-
-
-  render() {    
+  render() {
+    let isVisible = this.props.visible ? 'burger--active' : '';
 
     return ( 
-      <button type="menu" className="header__burger burger">
+      <button type="menu" className={`header__burger burger ${isVisible}`}>
         <span className="burger__stripe"></span>
       </button>
      );

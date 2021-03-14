@@ -2,6 +2,9 @@
   display: none;
   transition: all 0.3s;
   height: 22px;
+  &--active {
+    display: block;
+  }
   &__stripe {
     display: block;
     width: 30px;
