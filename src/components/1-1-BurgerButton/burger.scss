@@ -1,18 +1,6 @@
 .burger {
-  display: none;
-  transition: all 0.3s;
-  height: 22px;
-  &--active {
-    display: block;
-  }
-  &__stripe {
-    display: block;
-    width: 30px;
-    height: 2px;
-    background: #f1cdb3;
-    box-shadow: 0 10px 0 0 #f1cdb3, 0 20px 0 0 #f1cdb3;
-  }
-  &.active {
-    transform: rotate(-90deg);
-  }
+  position: absolute;
+  top: 3.5%;
+  right: 4%;
+  z-index: 5;
 }

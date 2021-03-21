@@ -43,7 +43,6 @@ class Slider extends Component {
   };
 
   closeModal = () => {
-    console.log("aaaa");
     this.setState({
       modalIsVisible: false,
       modal: [],
@@ -81,6 +80,10 @@ class Slider extends Component {
   }
 
   render() {
+    this.state.modalIsVisible
+      ? (document.body.style.overflowY = "hidden")
+      : (document.body.style.overflowY = "");
+
     return (
       <>
         <Carousel

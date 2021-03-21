@@ -108,6 +108,8 @@ class PetsPage extends Component {
   render() {
     const { cards, numberOfCards, isDisabled, modalIsVisible, modal } = this.state;
     const arr = [];
+
+    modalIsVisible ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "";
     
     const cardArr = cards.map((item) => {
       return <Slide {...item} key={item.id} showModal={this.showModal} />;

@@ -42,12 +42,19 @@
   }
 }
 
+@media (max-width: 960px) {
+  .help {
+    &__list {
+      grid-column-gap: 10vw;
+    }
+  }
+}
+
 @media (max-width: 840px) {
   .help {
     padding-bottom: 70px;
-    &__item {
-      width: 190px;
-      margin: 28px 20px;
+    &__list {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
@@ -68,11 +75,6 @@
     &__list {
       justify-content: space-between;
       padding: 0 5px;
-    }
-    &__item {
-      width: 130px;
-      margin: 0;
-      margin-bottom: 31px;
     }
     &__link {
       height: 87px;

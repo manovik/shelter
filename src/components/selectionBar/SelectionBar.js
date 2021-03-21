@@ -1,16 +1,14 @@
-import React from 'react';
+import React from "react";
 
 const checkClasses = (event) => {
   const t = event.target;
   if (t && t.parentElement.classList.contains("cards__box")) {
-
     for (let key of t.parentElement.children) {
       if (key.classList.contains("cards__btn--active")) {
         key.classList.remove("cards__btn--active");
       }
       t.classList.add("cards__btn--active");
     }
-
   }
 };
 
